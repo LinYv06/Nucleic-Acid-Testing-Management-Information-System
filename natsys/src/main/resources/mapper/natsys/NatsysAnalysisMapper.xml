@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.natsys.mapper.NatsysAnalysisMapper">
+    
+    <resultMap type="NatsysAnalysis" id="NatsysAnalysisResult">
+        <result property="analysisId"    column="analysis_id"    />
+        <result property="statisticDate"    column="statistic_date"    />
+        <result property="statisticArea"    column="statistic_area"    />
+        <result property="statisticLocation"    column="statistic_location"    />
+        <result property="positiveNum"    column="positive_num"    />
+        <result property="negativeNum"    column="negative_num"    />
+    </resultMap>
+
+    <sql id="selectNatsysAnalysisVo">
+        select analysis_id, statistic_date, statistic_area, statistic_location, positive_num, negative_num from natsys_analysis
+    </sql>
+
+    <select id="selectNatsysAnalysisList" parameterType="NatsysAnalysis" resultMap="NatsysAnalysisResult">
+        <include refid="selectNatsysAnalysisVo"/>
+        <where>  
+            <if test="params.beginStatisticDate != null and params.beginStatisticDate != '' and params.endStatisticDate != null and params.endStatisticDate != ''"> and statistic_date between #{params.beginStatisticDate} and #{params.endStatisticDate}</if>
+            <if test="statisticArea != null  and statisticArea != ''"> and statistic_area = #{statisticArea}</if>
+            <if test="statisticLocation != null  and statisticLocation != ''"> and statistic_location = #{statisticLocation}</if>
+        </where>
+    </select>
+    
+    <select id="selectNatsysAnalysisByAnalysisId" parameterType="Long" resultMap="NatsysAnalysisResult">
+        <include refid="selectNatsysAnalysisVo"/>
+        where analysis_id = #{analysisId}
+    </select>
+        
+    <insert id="insertNatsysAnalysis" parameterType="NatsysAnalysis" useGeneratedKeys="true" keyProperty="analysisId">
+        insert into natsys_analysis
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="statisticDate != null">statistic_date,</if>
+            <if test="statisticArea != null">statistic_area,</if>
+            <if test="statisticLocation != null">statistic_location,</if>
+            <if test="positiveNum != null">positive_num,</if>
+            <if test="negativeNum != null">negative_num,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="statisticDate != null">#{statisticDate},</if>
+            <if test="statisticArea != null">#{statisticArea},</if>
+            <if test="statisticLocation != null">#{statisticLocation},</if>
+            <if test="positiveNum != null">#{positiveNum},</if>
+            <if test="negativeNum != null">#{negativeNum},</if>
+         </trim>
+    </insert>
+
+    <update id="updateNatsysAnalysis" parameterType="NatsysAnalysis">
+        update natsys_analysis
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="statisticDate != null">statistic_date = #{statisticDate},</if>
+            <if test="statisticArea != null">statistic_area = #{statisticArea},</if>
+            <if test="statisticLocation != null">statistic_location = #{statisticLocation},</if>
+            <if test="positiveNum != null">positive_num = #{positiveNum},</if>
+            <if test="negativeNum != null">negative_num = #{negativeNum},</if>
+        </trim>
+        where analysis_id = #{analysisId}
+    </update>
+
+    <delete id="deleteNatsysAnalysisByAnalysisId" parameterType="Long">
+        delete from natsys_analysis where analysis_id = #{analysisId}
+    </delete>
+
+    <delete id="deleteNatsysAnalysisByAnalysisIds" parameterType="String">
+        delete from natsys_analysis where analysis_id in 
+        <foreach item="analysisId" collection="array" open="(" separator="," close=")">
+            #{analysisId}
+        </foreach>
+    </delete>
+</mapper>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.natsys.mapper.NatsysTestDoctorMapper">
+    
+    <resultMap type="NatsysTestDoctor" id="NatsysTestDoctorResult">
+        <result property="testId"    column="test_id"    />
+        <result property="patientId"    column="patient_id"    />
+        <result property="schemeId"    column="scheme_id"    />
+        <result property="testArea"    column="test_area"    />
+        <result property="testLocation"    column="test_location"    />
+        <result property="testTime"    column="test_time"    />
+        <result property="ifRecognition"    column="if_recognition"    />
+        <result property="testResult"    column="test_result"    />
+        <result property="auditorId"    column="auditor_id"    />
+        <result property="auditTime"    column="audit_time"    />
+        <result property="delFlag"    column="del_flag"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="patientName"    column="patient_name"    />
+        <result property="doctorName"    column="auditor_name"    />
+    </resultMap>
+
+    <sql id="selectNatsysTestDoctorVo">
+        select nt.test_id, nt.patient_id,
+               nt.scheme_id, nt.test_area,
+               nt.test_location, nt.test_time,
+               nt.if_recognition, nt.test_result,
+               nt.auditor_id, nt.audit_time,
+               nt.del_flag, nt.create_by,
+               nt.create_time, nt.update_by,
+               nt.update_time,
+               su1.nick_name patient_name,
+               su2.nick_name auditor_name
+        from natsys_test nt
+                 left join sys_user su1
+                           on patient_id = su1.user_id
+                 left join sys_user su2
+                           on auditor_id = su2.user_id
+    </sql>
+
+    <select id="selectNatsysTestDoctorList" parameterType="NatsysTestDoctor" resultMap="NatsysTestDoctorResult">
+        <include refid="selectNatsysTestDoctorVo"/>
+        <where>  
+            <if test="params.beginTestId != null and params.beginTestId != '' and params.endTestId != null and params.endTestId != ''">
+                and nt.test_id between #{params.beginTestId} and #{params.endTestId}</if>
+            <if test="patientId != null ">
+                and nt.patient_id = #{patientId}</if>
+            <if test="patientName != null and patientName != ''">
+                and su1.nick_name like concat('%', #{patientName}, '%')</if>
+            <if test="schemeId != null ">
+                and nt.scheme_id = #{schemeId}</if>
+            <if test="testLocation != null  and testLocation != ''">
+                and nt.test_location = #{testLocation}</if>
+            <if test="params.beginTestTime != null and params.beginTestTime != '' and params.endTestTime != null and params.endTestTime != ''">
+                and nt.test_time between #{params.beginTestTime} and #{params.endTestTime}</if>
+            <if test="ifRecognition != null  and ifRecognition != ''">
+                and nt.if_recognition = #{ifRecognition}</if>
+            <if test="testResult != null  and testResult != ''">
+                and nt.test_result = #{testResult}</if>
+            <if test="auditorId != null ">
+                and nt.auditor_id = #{auditorId}</if>
+            <if test="doctorName != null and doctorName != ''">
+                and su2.nick_name like concat('%', #{doctorName}, '%')</if>
+            <if test="params.beginAuditTime != null and params.beginAuditTime != '' and params.endAuditTime != null and params.endAuditTime != ''">
+                and nt.audit_time between #{params.beginAuditTime} and #{params.endAuditTime}</if>
+        </where>
+    </select>
+    
+    <select id="selectNatsysTestDoctorByTestId" parameterType="Long" resultMap="NatsysTestDoctorResult">
+        <include refid="selectNatsysTestDoctorVo"/>
+        where nt.test_id = #{testId}
+    </select>
+        
+    <insert id="insertNatsysTestDoctor" parameterType="NatsysTestDoctor" useGeneratedKeys="true" keyProperty="testId">
+        insert into natsys_test
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="patientId != null">patient_id,</if>
+            <if test="schemeId != null">scheme_id,</if>
+            <if test="testArea != null">test_area,</if>
+            <if test="testLocation != null and testLocation != ''">test_location,</if>
+            <if test="testTime != null">test_time,</if>
+            <if test="ifRecognition != null">if_recognition,</if>
+            <if test="testResult != null">test_result,</if>
+            <if test="auditorId != null">auditor_id,</if>
+            <if test="auditTime != null">audit_time,</if>
+            <if test="delFlag != null">del_flag,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="patientId != null">#{patientId},</if>
+            <if test="schemeId != null">#{schemeId},</if>
+            <if test="testArea != null">#{testArea},</if>
+            <if test="testLocation != null and testLocation != ''">#{testLocation},</if>
+            <if test="testTime != null">#{testTime},</if>
+            <if test="ifRecognition != null">#{ifRecognition},</if>
+            <if test="testResult != null">#{testResult},</if>
+            <if test="auditorId != null">#{auditorId},</if>
+            <if test="auditTime != null">#{auditTime},</if>
+            <if test="delFlag != null">#{delFlag},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateNatsysTestDoctor" parameterType="NatsysTestDoctor">
+        update natsys_test
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="patientId != null">patient_id = #{patientId},</if>
+            <if test="schemeId != null">scheme_id = #{schemeId},</if>
+            <if test="testArea != null">test_area = #{testArea},</if>
+            <if test="testLocation != null and testLocation != ''">test_location = #{testLocation},</if>
+            <if test="testTime != null">test_time = #{testTime},</if>
+            <if test="ifRecognition != null">if_recognition = #{ifRecognition},</if>
+            <if test="testResult != null">test_result = #{testResult},</if>
+            <if test="auditorId != null">auditor_id = #{auditorId},</if>
+            <if test="auditTime != null">audit_time = #{auditTime},</if>
+            <if test="delFlag != null">del_flag = #{delFlag},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where test_id = #{testId}
+    </update>
+
+    <delete id="deleteNatsysTestDoctorByTestId" parameterType="Long">
+        delete from natsys_test where test_id = #{testId}
+    </delete>
+
+    <delete id="deleteNatsysTestDoctorByTestIds" parameterType="String">
+        delete from natsys_test where test_id in 
+        <foreach item="testId" collection="array" open="(" separator="," close=")">
+            #{testId}
+        </foreach>
+    </delete>
+</mapper>

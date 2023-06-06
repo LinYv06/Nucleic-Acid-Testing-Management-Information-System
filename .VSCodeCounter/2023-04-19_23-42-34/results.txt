@@ -1,0 +1,78 @@
+Date : 2023-04-19 23:42:34
+Directory : c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin
+Total : 31 files,  2351 codes, 528 comments, 274 blanks, all 3153 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| Java       |         24 |      2,051 |        417 |        235 |      2,703 |
+| XML        |          3 |        156 |         38 |         23 |        217 |
+| YAML       |          2 |        113 |         70 |         10 |        193 |
+| Properties |          2 |         31 |          3 |          6 |         40 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                  | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                     |         31 |      2,351 |        528 |        274 |      3,153 |
+| . (Files)                                                                                                                             |          1 |         82 |          8 |         13 |        103 |
+| src                                                                                                                                   |         30 |      2,269 |        520 |        261 |      3,050 |
+| src\main                                                                                                                              |         30 |      2,269 |        520 |        261 |      3,050 |
+| src\main\java                                                                                                                         |         24 |      2,051 |        417 |        235 |      2,703 |
+| src\main\java\com                                                                                                                     |         24 |      2,051 |        417 |        235 |      2,703 |
+| src\main\java\com\ruoyi                                                                                                               |         24 |      2,051 |        417 |        235 |      2,703 |
+| src\main\java\com\ruoyi (Files)                                                                                                       |          2 |         33 |         11 |          6 |         50 |
+| src\main\java\com\ruoyi\web                                                                                                           |         22 |      2,018 |        406 |        229 |      2,653 |
+| src\main\java\com\ruoyi\web\controller                                                                                                |         21 |      1,938 |        370 |        219 |      2,527 |
+| src\main\java\com\ruoyi\web\controller\common                                                                                         |          2 |        200 |         38 |         21 |        259 |
+| src\main\java\com\ruoyi\web\controller\monitor                                                                                        |          5 |        320 |         28 |         38 |        386 |
+| src\main\java\com\ruoyi\web\controller\system                                                                                         |         13 |      1,262 |        299 |        137 |      1,698 |
+| src\main\java\com\ruoyi\web\controller\tool                                                                                           |          1 |        156 |          5 |         23 |        184 |
+| src\main\java\com\ruoyi\web\core                                                                                                      |          1 |         80 |         36 |         10 |        126 |
+| src\main\java\com\ruoyi\web\core\config                                                                                               |          1 |         80 |         36 |         10 |        126 |
+| src\main\resources                                                                                                                    |          6 |        218 |        103 |         26 |        347 |
+| src\main\resources (Files)                                                                                                            |          3 |        175 |         93 |         18 |        286 |
+| src\main\resources\META-INF                                                                                                           |          1 |          1 |          0 |          0 |          1 |
+| src\main\resources\i18n                                                                                                               |          1 |         30 |          3 |          6 |         39 |
+| src\main\resources\mybatis                                                                                                            |          1 |         12 |          7 |          2 |         21 |
++---------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                                              | language   | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\pom.xml                                                                     | XML        |         82 |          8 |         13 |        103 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\RuoYiApplication.java                               | Java       |         22 |          6 |          3 |         31 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\RuoYiServletInitializer.java                        | Java       |         11 |          5 |          3 |         19 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\common\CaptchaController.java        | Java       |         73 |         11 |         11 |         95 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\common\CommonController.java         | Java       |        127 |         27 |         10 |        164 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\monitor\CacheController.java         | Java       |        103 |          5 |         13 |        121 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\monitor\ServerController.java        | Java       |         20 |          5 |          3 |         28 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\monitor\SysLogininforController.java | Java       |         69 |          5 |          9 |         83 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\monitor\SysOperlogController.java    | Java       |         58 |          5 |          7 |         70 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\monitor\SysUserOnlineController.java | Java       |         70 |          8 |          6 |         84 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysConfigController.java      | Java       |         97 |         26 |         11 |        134 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysDeptController.java        | Java       |        101 |         23 |          9 |        133 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysDictDataController.java    | Java       |         91 |         20 |         11 |        122 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysDictTypeController.java    | Java       |         98 |         23 |         11 |        132 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysIndexController.java       | Java       |         17 |          9 |          4 |         30 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysLoginController.java       | Java       |         55 |         24 |          8 |         87 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysMenuController.java        | Java       |        107 |         26 |          9 |        142 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysNoticeController.java      | Java       |         64 |         20 |          8 |         92 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysPostController.java        | Java       |         97 |         23 |         10 |        130 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysProfileController.java     | Java       |        114 |         20 |          8 |        142 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysRegisterController.java    | Java       |         29 |          5 |          5 |         39 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysRoleController.java        | Java       |        194 |         45 |         24 |        263 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysUserController.java        | Java       |        198 |         35 |         19 |        252 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\tool\TestController.java             | Java       |        156 |          5 |         23 |        184 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\core\config\SwaggerConfig.java                  | Java       |         80 |         36 |         10 |        126 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\resources\META-INF\spring-devtools.properties                      | Properties |          1 |          0 |          0 |          1 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\resources\application-druid.yml                                    | YAML       |         44 |         17 |          0 |         61 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\resources\application.yml                                          | YAML       |         69 |         53 |         10 |        132 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\resources\i18n\messages.properties                                 | Properties |         30 |          3 |          6 |         39 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\resources\logback.xml                                              | XML        |         62 |         23 |          8 |         93 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-admin\src\main\resources\mybatis\mybatis-config.xml                               | XML        |         12 |          7 |          2 |         21 |
+| Total                                                                                                                                 |            |      2,351 |        528 |        274 |      3,153 |
++---------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

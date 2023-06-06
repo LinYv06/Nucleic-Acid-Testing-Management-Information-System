@@ -1,0 +1,40 @@
+Date : 2023-04-20 00:00:39
+Directory : c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-ui\src\api\system
+Total : 12 files,  384 codes, 55 comments, 57 blanks, all 496 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |         12 |        384 |         55 |         57 |        496 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                 | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                    |         12 |        384 |         55 |         57 |        496 |
+| . (Files)                                                                            |          7 |        400 |         57 |         61 |        518 |
+| ..                                                                                   |          3 |       -102 |        -15 |        -18 |       -135 |
+| ..\natsys                                                                            |          3 |       -102 |        -15 |        -18 |       -135 |
+| dict                                                                                 |          2 |         86 |         13 |         14 |        113 |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                             | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-ui\src\api\natsys\scheme.js      | JavaScript |        -34 |         -5 |         -6 |        -45 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-ui\src\api\natsys\testDoctor.js  | JavaScript |        -34 |         -5 |         -6 |        -45 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-ui\src\api\natsys\testPatient.js | JavaScript |        -34 |         -5 |         -6 |        -45 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-ui\src\api\system\config.js      | JavaScript |         46 |          7 |          8 |         61 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-ui\src\api\system\dept.js        | JavaScript |         40 |          6 |          6 |         52 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-ui\src\api\system\dict\data.js   | JavaScript |         40 |          6 |          7 |         53 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-ui\src\api\system\dict\type.js   | JavaScript |         46 |          7 |          7 |         60 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-ui\src\api\system\menu.js        | JavaScript |         46 |          7 |          7 |         60 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-ui\src\api\system\notice.js      | JavaScript |         34 |          5 |          5 |         44 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-ui\src\api\system\post.js        | JavaScript |         34 |          5 |          6 |         45 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-ui\src\api\system\role.js        | JavaScript |         93 |         13 |         14 |        120 |
+| c:\Users\HP\Desktop\JavaCode\RuoYi-Vue-master\ruoyi-ui\src\api\system\user.js        | JavaScript |        107 |         14 |         15 |        136 |
+| Total                                                                                |            |        384 |         55 |         57 |        496 |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

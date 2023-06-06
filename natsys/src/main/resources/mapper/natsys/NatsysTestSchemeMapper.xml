@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.natsys.mapper.NatsysTestSchemeMapper">
+    
+    <resultMap type="NatsysTestScheme" id="NatsysTestSchemeResult">
+        <result property="schemeId"    column="scheme_id"    />
+        <result property="samplingMethod"    column="sampling_method"    />
+        <result property="testingMethod"    column="testing_method"    />
+        <result property="inspectionProcess"    column="inspection_process"    />
+        <result property="delFlag"    column="del_flag"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectNatsysTestSchemeVo">
+        select scheme_id, sampling_method, testing_method, inspection_process, del_flag, create_by, create_time, update_by, update_time from natsys_test_scheme
+    </sql>
+
+    <select id="selectNatsysTestSchemeList" parameterType="NatsysTestScheme" resultMap="NatsysTestSchemeResult">
+        <include refid="selectNatsysTestSchemeVo"/>
+        <where>  
+            <if test="samplingMethod != null  and samplingMethod != ''"> and sampling_method = #{samplingMethod}</if>
+            <if test="testingMethod != null  and testingMethod != ''"> and testing_method = #{testingMethod}</if>
+        </where>
+    </select>
+    
+    <select id="selectNatsysTestSchemeBySchemeId" parameterType="Long" resultMap="NatsysTestSchemeResult">
+        <include refid="selectNatsysTestSchemeVo"/>
+        where scheme_id = #{schemeId}
+    </select>
+        
+    <insert id="insertNatsysTestScheme" parameterType="NatsysTestScheme" useGeneratedKeys="true" keyProperty="schemeId">
+        insert into natsys_test_scheme
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="samplingMethod != null and samplingMethod != ''">sampling_method,</if>
+            <if test="testingMethod != null and testingMethod != ''">testing_method,</if>
+            <if test="inspectionProcess != null">inspection_process,</if>
+            <if test="delFlag != null">del_flag,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="samplingMethod != null and samplingMethod != ''">#{samplingMethod},</if>
+            <if test="testingMethod != null and testingMethod != ''">#{testingMethod},</if>
+            <if test="inspectionProcess != null">#{inspectionProcess},</if>
+            <if test="delFlag != null">#{delFlag},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateNatsysTestScheme" parameterType="NatsysTestScheme">
+        update natsys_test_scheme
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="samplingMethod != null and samplingMethod != ''">sampling_method = #{samplingMethod},</if>
+            <if test="testingMethod != null and testingMethod != ''">testing_method = #{testingMethod},</if>
+            <if test="inspectionProcess != null">inspection_process = #{inspectionProcess},</if>
+            <if test="delFlag != null">del_flag = #{delFlag},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where scheme_id = #{schemeId}
+    </update>
+
+    <delete id="deleteNatsysTestSchemeBySchemeId" parameterType="Long">
+        delete from natsys_test_scheme where scheme_id = #{schemeId}
+    </delete>
+
+    <delete id="deleteNatsysTestSchemeBySchemeIds" parameterType="String">
+        delete from natsys_test_scheme where scheme_id in 
+        <foreach item="schemeId" collection="array" open="(" separator="," close=")">
+            #{schemeId}
+        </foreach>
+    </delete>
+</mapper>
